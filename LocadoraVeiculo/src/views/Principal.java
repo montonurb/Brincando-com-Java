@@ -1,20 +1,46 @@
+package views;
 
-import javax.swing.JOptionPane;
+import models.Motorista;
+import models.Carro;
+import models.Moto;
+import utils.Mensagem;
 
 /**
  *
  * @author montonurb
  */
 public class Principal {
-    public static void main(String[] args) {
-        Motorista motorista = new Motorista();
-        
-        motorista.setNome("Abimar");
-        motorista.setCpf("098.098.000-99");
-        motorista.setContato("(86) 99910-0910");
 
-        JOptionPane.showMessageDialog(null, motorista.toString());
+    public static void main(String[] args) {
+
+        Moto moto = new Moto();
+        moto.setCapacete("Capacete San Marino");
+        moto.setCor("Preto");
+        moto.setMarca("Honda");
+        moto.setModelo("Fan 125");
+        moto.ligar();
+        moto.acelerar();
         
+        Mensagem.mensagem(moto.toString());
+        
+//        Motorista motorista = new Motorista();
+//        motorista.setNome("Abimar");
+//        motorista.setCpf("098.098.000-99");
+//        motorista.setContato("(86) 99910-0910");
+//        
+//        Carro carro = new Carro();
+//        carro.setCor("Preto");
+//        carro.setMarca("Chevrolet");
+//        carro.setModelo("Onix");
+//        carro.setTipoCombustivel("Flex");
+//        carro.setValor(56900.00);
+//        carro.setMotorista(motorista);
+//        
+//        carro.ligar();
+//        carro.acelerar(15);
+//
+//        Mensagem.mensagem(carro.toString());
+//
 //        String mensagem;
 //        Carro carro = new Carro();
 //        carro.cor = "Amarelo";
@@ -25,7 +51,7 @@ public class Principal {
 //        carro.mudarMarcha();
 //        
 //        while(carro.marcha > 0 && carro.marcha <= 6) {
-//            carro.acelerarManualmente(15);
+//            carro.acelerar(15);
 //            System.out.println(carro.mensagem());
 //            carro.mudarMarcha();
 //        }
@@ -33,7 +59,7 @@ public class Principal {
 //        carro.mensagem();
 //        System.out.println("Valor do carro: " + carro.valor);
 //        System.out.println("Valor do carro com desconto: " + carro.venderCarro(10));
-        
+//
 //        mensagem = "Carro de modelo " + carro.modelo
 //                + ", cor " + carro.cor + ", combustível do tipo "
 //                + carro.tipoCombustivel + " custa R$ " + carro.valor;
