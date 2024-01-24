@@ -1,8 +1,7 @@
 package views;
 
-import models.Motorista;
-import models.Carro;
 import models.Moto;
+import models.TipoCombustivel;
 import utils.Mensagem;
 
 /**
@@ -18,6 +17,7 @@ public class Principal {
         moto.setCor("Preto");
         moto.setMarca("Honda");
         moto.setModelo("Fan 125");
+        moto.setTipoCombustivel(TipoCombustivel.GASOLINA);
         moto.ligar();
         moto.acelerar();
         

@@ -1,79 +1,34 @@
 package models;
 
-import utils.Mensagem;
-
 /**
  *
  * @author montonurb
  */
-public class Veiculo {
+public abstract class Veiculo {
     public static final int VELOCIDADE_MAXIMA = 200;
     private String marca;
     private String modelo;
     public String cor;
-    public String tipoCombustivel;
-    public double valor;
-    public int velocidade;
-    public int marcha;
+    public TipoCombustivel tipoCombustivel;
+    private double valor;
+    private int velocidade;
+    private int marcha;
     protected boolean acenderLuz;
+    private Motorista motorista;
 
     public Veiculo() {
     }
-
-    public Veiculo(String marca, String modelo, String cor, String tipoCombustivel, double valor, int velocidade, int marcha, boolean acenderLuz) {
-        this.marca = marca;
-        this.modelo = modelo;
-        this.cor = cor;
-        this.tipoCombustivel = tipoCombustivel;
-        this.valor = valor;
-        this.velocidade = velocidade;
-        this.marcha = marcha;
-        this.acenderLuz = acenderLuz;
-    }
     
-    public void tipoVeiculo() {
-        Mensagem.mensagem("Aqui é um veículo!");
-    }
+    public abstract void mostrarDados();
     
-    public void ligar() {
-        velocidade = 0;
-        marcha = 0;
-        Mensagem.mensagem("O veículo está ligado!");
-    }
+    public abstract void acelerar();
 
-    public void desligar() {
-        Mensagem.mensagem("O veículo está desligado!");
-    }
-
-    public void acelerar() {
-        if(velocidade <= VELOCIDADE_MAXIMA) {
-            velocidade += 10;
-        } else {
-            desligar();
-        }
-    }
-
-    public void acelerar(int pesoVelocidade) {
-        if (pesoVelocidade > VELOCIDADE_MAXIMA) {
-            desligar();
-        } else {
-            velocidade += pesoVelocidade;
-        }
-    }
+    public abstract void tipoVeiculo();
 
     public void mudarMarcha() {
         marcha += 1;
     }
-
-    public int retornarVelocidade() {
-        return velocidade;
-    }
     
-    public double venderVeiculo(double descontoPorcentagem) {
-        double porcentagem = descontoPorcentagem / 100;
-        return valor - (valor * porcentagem);
-    }
-
     public String getMarca() {
         return marca;
     }
@@ -98,11 +53,11 @@ public class Veiculo {
         this.cor = cor;
     }
 
-    public String getTipoCombustivel() {
+    public TipoCombustivel getTipoCombustivel() {
         return tipoCombustivel;
     }
 
-    public void setTipoCombustivel(String tipoCombustivel) {
+    public void setTipoCombustivel(TipoCombustivel tipoCombustivel) {
         this.tipoCombustivel = tipoCombustivel;
     }
 
@@ -136,5 +91,13 @@ public class Veiculo {
 
     public void setAcenderLuz(boolean acenderLuz) {
         this.acenderLuz = acenderLuz;
+    }
+
+    public Motorista getMotorista() {
+        return motorista;
+    }
+
+    public void setMotorista(Motorista motorista) {
+        this.motorista = motorista;
     }
 }

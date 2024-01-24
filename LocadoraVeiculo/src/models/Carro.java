@@ -1,23 +1,37 @@
 package models;
 
-import javax.swing.JOptionPane;
+import interfaces.Motor;
 
 /**
  *
  * @author montonurb
  */
-public class Carro extends Veiculo {
+public class Carro extends Veiculo implements Motor {
     
-    private Motorista motorista;
+    public Carro() {}
 
-    public Carro() {
+    @Override
+    public void ligar() {
+        System.out.println("O carro está ligado!");
     }
 
-    public Motorista getMotorista() {
-        return motorista;
+    @Override
+    public void desligar() {
+        System.out.println("O carro está desligado!");
     }
 
-    public void setMotorista(Motorista motorista) {
-        this.motorista = motorista;
+    @Override
+    public void mostrarDados() {
+        System.out.println("Eu sou um carro!");
+    }
+
+    @Override
+    public void acelerar() {
+        System.out.println("Colocar dados aqui!");
+    }
+
+    @Override
+    public void tipoVeiculo() {
+        System.out.println("Colocar dados aqui!");
     }
 }
